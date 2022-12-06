@@ -1,13 +1,13 @@
-#include<iostream>
-#include<string>
+#include <iostream>
+#include <string>
 #include "LinkedList.h"
 #include "Node.h"
 
 using namespace std;
-// template<typename T>
+template <typename T>
 int main()
 {
-    LinkedList list;
+    LinkedList<int> list;
 
     int ch, item, index;
     bool quit = false;

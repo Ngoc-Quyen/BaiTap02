@@ -1,5 +1,7 @@
 #include "Sach.h"
 template <typename T>
+Sach<T>::Sach() {}
+template <typename T>
 Sach<T>::Sach(T loai) : Loai(loai) {}
 template <typename T>
 Sach<T>::Sach(const T &sach)

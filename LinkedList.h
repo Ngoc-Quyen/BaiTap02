@@ -8,11 +8,17 @@ class Node;
 template <typename T>
 class LinkedList
 {
-    private:
+    protected:
+        int size;
         Node<T> *head;
         Node<T> *tail;
+        bool check;
+        Node<T> *findEndOfSortedString(Node<T> , bool(*)(T&, T&) );
     public:
         LinkedList(T&); //khoi tao list rong
+        LinkedList();
+        ~LinkedList();
+        T size();
         T isEmpty(); //Kiem tra xem lieu LinkedList co rong hay ko
         void addHead( T); //chen vao dau
         void addTail( T); //chen vao cuoi

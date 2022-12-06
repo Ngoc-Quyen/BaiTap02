@@ -1,5 +1,7 @@
 #include "BaiBao.h"
 template <typename T>
+BaiBao<T>::BaiBao() {}
+template <typename T>
 BaiBao<T>::BaiBao(T ten, T sl) : TenCT(ten), SLTacGia(sl) {}
 template <typename T>
 BaiBao<T>::BaiBao(const T& bb)

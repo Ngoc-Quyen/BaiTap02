@@ -11,6 +11,7 @@ private:
     T Loai;
 
 public:
+    Sach();
     Sach(T);
     Sach(const T &);
     ~Sach();

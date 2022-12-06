@@ -12,6 +12,7 @@ private:
     T SLTacGia;
 
 public:
+    BaiBao();
     BaiBao(T, T);
     BaiBao(const T &);
     ~BaiBao();

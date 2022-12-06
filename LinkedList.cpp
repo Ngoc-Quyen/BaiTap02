@@ -1,10 +1,34 @@
 #include "LinkedList.h"
+template <typename T>
+LinkedList<T>::LinkedList()
+{
+    head = NULL;
+    tail = NULL;
+    size = 0;
+    check = false;
 
+}
 template <typename T>
 LinkedList<T>::LinkedList(T &ls)
 {
-    ls.head = NULL;
-    ls.tail = NULL;
+    this->head = ls.head;
+    this->tail = ls.tail;
+    size = ls.Len();
+    check = true;
+}
+template <typename T>
+LinkedList<T>::~LinkedList()
+{
+    Node<T> *tmp;
+    while (head != NULL)
+    {
+        tmp = head;
+        head = head->next;
+        delete tmp;
+    }
+    tail = NULL;
+    size = 0;
+    check = false;
 }
 template <typename T>
 T LinkedList<T>::isEmpty()
@@ -198,3 +222,8 @@ void LinkedList<T>::display()
     }
 }
 
+template <typename T>
+T LinkedList<T>::size()
+{
+    return this->size;
+}

@@ -1,5 +1,7 @@
 #include "CongTrinhKhoaHoc.h"
 template <typename T>
+CongTrinhKhoaHoc<T>::CongTrinhKhoaHoc() {}
+template <typename T>
 CongTrinhKhoaHoc<T>::CongTrinhKhoaHoc(T ma, T nam, T KV) : MaCT(ma), NamXB(nam), KhuVuc(KV) {}
 template <typename T>
 CongTrinhKhoaHoc<T>::CongTrinhKhoaHoc(T& ctkh)

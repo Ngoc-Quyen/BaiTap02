@@ -10,6 +10,7 @@ class CongTrinhKhoaHoc
         T NamXB;
         T KhuVuc;
     public: 
+        CongTrinhKhoaHoc();
         CongTrinhKhoaHoc(T, T, T);
         CongTrinhKhoaHoc(T&);
         ~CongTrinhKhoaHoc();
