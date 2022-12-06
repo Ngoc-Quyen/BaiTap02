@@ -46,16 +46,16 @@ template <typename T>
 istream& operator>>(istream& in,CongTrinhKhoaHoc<T>& ctkh)
 {
     cout << "Nhap Ma CT(Chi Nhap So): ";
-    in >> p.MaCT;
+    in >> ctkh.MaCT;
     cout << "Nhap Nam XB: ";
-    in >> p.NamXB;
-    while (p.NamXB < 1900)
+    in >> ctkh.NamXB;
+    while (ctkh.NamXB < 1900)
     {
         cout << "Nhap lai NamXB: ";
-        in >> p.NamXB;
+        in >> ctkh.NamXB;
     }
     cout << "Nhap Khu Vuc XB: ";
-    in >> p.Khuvuc;
+    in >> ctkh.Khuvuc;
     return in;
 }
 template <typename T>
@@ -74,7 +74,7 @@ void CongTrinhKhoaHoc<T>::input()
     cout << "Nhap Ma CT(Chi Nhap So): ";
     cin >> this->MaCT;
     cout << "Nhap Nam XB: ";
-    in >> this->NamXB;
+    cin >> this->NamXB;
     while (this->NamXB < 1900)
     {
         cout << "Nhap lai NamXB: ";
@@ -86,8 +86,8 @@ void CongTrinhKhoaHoc<T>::input()
 template <typename T>
 void CongTrinhKhoaHoc<T>::display()
 {
-    cout << p.MaCT << " " << p.NamXB << " ";
-    if (p.Khuvuc == 0)
+    cout << this->MaCT << " " << this->NamXB << " ";
+    if (this->Khuvuc == 0)
         cout << "trong nuoc" << endl;
     else
         cout << "quoc te" << endl;

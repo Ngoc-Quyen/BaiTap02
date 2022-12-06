@@ -5,18 +5,6 @@
 using namespace std;
 
 template<typename T>
-bool Desc(T& a, T& b)
-{
-    if (a.getNamXB() > b.getNamXB()) return false;
-    return true;
-}
-template<typename T>
-bool Asc(T& a, T& b)
-{
-    if (a.getNamXB() < b.getNamXB()) return false;
-    return true;
-}
-template<typename T>
 class ListCTKH
 {
     private:
@@ -29,13 +17,13 @@ class ListCTKH
         ~ListCTKH();
         void addCTKHHead();
         void addCTKHTail();
-        void addCTKH(T/*, CongTrinhKhoaHoc<T>*/);
-        void removeCTKH(T);
+        void addCTKH(int/*, CongTrinhKhoaHoc<T>*/);
         void removeCTKH();
-        CongTrinhKhoaHoc<T> findCTKH(T);
+        CongTrinhKhoaHoc<T> findCTKH(int);
         void displayCTKH();
         void sortCTKH();
-        void clearCTKH();
+        // void clearCTKH();
         T getNumber();
+
         
 };

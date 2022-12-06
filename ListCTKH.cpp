@@ -88,7 +88,7 @@ void ListCTKH<T>::addCTKHTail()
     }
 }
 template <typename T>
-void ListCTKH<T>::addCTKH(T k)
+void ListCTKH<T>::addCTKH(int k)
 {
     CongTrinhKhoaHoc<T> CTKH;
     int type;
@@ -116,7 +116,7 @@ void ListCTKH<T>::addCTKH(T k)
             break;
         }
         CTKH.input();
-        *(this->CTKHs).addAtK(k, CTKH);
+        (this->CTKHs).addAtK(k, CTKH);
     }
     catch (...)
     {
@@ -140,23 +140,23 @@ void ListCTKH<T>::removeCTKH()
         case 1:
         {
             (this->CTKHs).removeHead();
-            this->Number = (this->CTKHs).size();
+            this->Number = (this->CTKHs)._size();
             break;
         }
         case 2:
         {
             (this->CTKHs).removeTail();
-            this->Number = (this->CTKHs).size();
+            this->Number = (this->CTKHs)._size();
             break;
         }
         case 3:
         {
             T cmt;
             cout << "Nhap Vi Tri Can Xoa: ";
-            cin >> common_type;
+            cin >> cmt;
             (*(this->CTKHs)).removeAtK(cmt);
-            this->Number = (this->CTKHs).size();       
-            break;     
+            this->Number = (this->CTKHs)._size();
+            break;
         }
         default:
             cout << "Lua Chon Khong Ton Tai!!" << endl;
@@ -169,12 +169,51 @@ void ListCTKH<T>::removeCTKH()
     }
 }
 template <typename T>
-CongTrinhKhoaHoc<T> ListCTKH<T>::findCTKH(T year)
+CongTrinhKhoaHoc<T> ListCTKH<T>::findCTKH(int year)
 {
-    CongTrinhKhoaHoc<T> target;
-    for(int i = 0; i < ((this->CTKHs).size()); i++)
+    (this->CTKHs).interpolationSearch(year);
+}
+template <typename T>
+void ListCTKH<T>::displayCTKH()
+{
+    for (int i = 0; i < ((this->CTKHs).size()); i++)
     {
-        CongTrinhKhoaHoc<T> cur = ((this->CTKHs)).get(i);
-        if ()
+        (*(this->CTKHs + i)).output();
+    }
+}
+template <typename T>
+void ListCTKH<T>::sortCTKH()
+{
+    cout << "1. Sap Xep Giam Dan\n";
+    cout << "2. Sap Xep Tang Dan\n";
+    int type;
+    try
+    {
+        cout << "Nhap Lua Chon: ";
+        cin >> type;
+        switch (type)
+        {
+        case 1:
+        {
+            (this->CTKHs).sort(Desc);
+            (this->CTKHs).displayCTKH();
+            break;
+        }
+        case 2:
+        {
+            (this->CTKHs).sort(Asc);
+            (this->CTKHs).displayCTKH();
+            break;
+        }
+        default:
+        {
+            cout << "Lua Chon Khong Ton Tai!!" << endl;
+            break;
+        }
+        }
+    }
+    catch(...)
+    {
+        cout << "Lua Chon Khong Hop Le!\n";
     }
 }

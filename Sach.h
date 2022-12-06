@@ -5,7 +5,7 @@
 using namespace std;
 
 template <typename T>
-class Sach : public CongTrinhKhoaHoc
+class Sach : public CongTrinhKhoaHoc<T>
 {
 private:
     T Loai;
@@ -17,10 +17,10 @@ public:
     ~Sach();
     void setLoai(T);
     T getLoai();
-    template <typename T>
-    friend istream &operator>>(istream &, Sach<T> &);
-    template<typename T>
-    friend ostream &operator<<(ostream &, const Sach<T> &);
+    template <typename U>
+    friend istream &operator>>(istream &, Sach<U> &);
+    template<typename U>
+    friend ostream &operator<<(ostream &, const Sach<U> &);
     void input();
     void display();
 };

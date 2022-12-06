@@ -20,10 +20,10 @@ class CongTrinhKhoaHoc
         T getNamXB() ;
         void setKhuVuc(T);
         T getKhuVuc();
-        template <typename T>
-        friend istream& operator>>(istream&,CongTrinhKhoaHoc<T>&);
-        template <typename T>
-        friend ostream& operator <<(ostream&, const CongTrinhKhoaHoc<T>&);
+        template <typename U>
+        friend istream& operator>>(istream&,CongTrinhKhoaHoc<U>&);
+        template <typename U>
+        friend ostream& operator <<(ostream&, const CongTrinhKhoaHoc<U>&);
         void Update(T, T);
         virtual void display();
         virtual void input();

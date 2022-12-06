@@ -4,8 +4,8 @@
 #include "CongTrinhKhoaHoc.h"
 using namespace std;
 
-template <typename T>
-class BaiBao : public CongTrinhKhoaHoc
+template <class T>
+class BaiBao : public CongTrinhKhoaHoc<T>
 {
 private:
     T TenCT;
@@ -17,13 +17,13 @@ public:
     BaiBao(const T &);
     ~BaiBao();
     void setTenCT(T);
-    T getTenCT() ;
+    T getTenCT();
     void setSLTacGia(T);
-    T getSLTacGia() ;
-    template <typename T>
-    friend istream &operator>>(istream &, BaiBao<T> &);
-    template <typename T>
-    friend ostream &operator<<(ostream &, const BaiBao<T> &);
+    T getSLTacGia();
+    template <class U>
+    friend istream &operator>>(istream &, BaiBao<U> &);
+    template <class U>
+    friend ostream &operator<<(ostream &, const BaiBao<U> &);
     void input();
     void display();
 };

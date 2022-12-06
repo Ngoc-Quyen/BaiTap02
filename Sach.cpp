@@ -28,9 +28,9 @@ istream &operator>>(istream &in, Sach<T> &s)
     return in;
 }
 template <typename T>
-ostream &operator<<(ostream &, const Sach<T> &s)
+ostream &operator<<(ostream &out, const Sach<T> &s)
 {
-    cout << "The Loai: ";
+    out << "The Loai: ";
     out << s.Loai << endl;
     return out;
 }
